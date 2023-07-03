@@ -1,0 +1,35 @@
+[debug] Acquiring lock on file C:\Users\Abhinav\Desktop\Demyst\Ipify\project\target\.sbt-compilation-infos\root-compile\.sbt-idea-lock ...
+[error] C:\Users\Abhinav\Desktop\Demyst\Ipify\src\main\scala\Main.scala:4:12: object json is not a member of package zio
+[error] import zio.json._
+[error]            ^
+[error] C:\Users\Abhinav\Desktop\Demyst\Ipify\src\main\scala\Main.scala:9:25: not found: type JsonDecoder
+[error]   implicit val decoder: JsonDecoder[IPResponse] = DeriveJsonDecoder.gen[IPResponse]
+[error]                         ^
+[error] C:\Users\Abhinav\Desktop\Demyst\Ipify\src\main\scala\Main.scala:9:51: not found: value DeriveJsonDecoder
+[error]   implicit val decoder: JsonDecoder[IPResponse] = DeriveJsonDecoder.gen[IPResponse]
+[error]                                                   ^
+[error] C:\Users\Abhinav\Desktop\Demyst\Ipify\src\main\scala\Main.scala:13:19: reference to blocking is ambiguous;
+[error] it is imported twice in the same scope by
+[error] import zio.blocking._
+[error] and import zio._
+[error]       response <- blocking(TaskHttpClient.get("https://api.ipify.org/?format=json"))
+[error]                   ^
+[error] C:\Users\Abhinav\Desktop\Demyst\Ipify\src\main\scala\Main.scala:13:28: not found: value TaskHttpClient
+[error]       response <- blocking(TaskHttpClient.get("https://api.ipify.org/?format=json"))
+[error]                            ^
+[error] C:\Users\Abhinav\Desktop\Demyst\Ipify\src\main\scala\Main.scala:19:67: type mismatch;
+[error]  found   : zio.ZIO[zio.console.Console,java.io.IOException,zio.ExitCode]
+[error]     (which expands to)  zio.ZIO[zio.Has[zio.console.Console.Service],java.io.IOException,zio.ExitCode]
+[error]  required: zio.ZIO[zio.ZEnv,Nothing,zio.ExitCode]
+[error]     (which expands to)  zio.ZIO[zio.Has[zio.clock.Clock.Service] with zio.Has[zio.console.Console.Service] with zio.Has[zio.system.System.Service] with zio.Has[zio.random.Random.Service] with zio.Has[zio.blocking.Blocking.Service],Nothing,zio.ExitCode]
+[error]       error => putStrLn(s"Failed to retrieve IP address: $error") *> ZIO.succeed(ExitCode.failure),
+[error]                                                                   ^
+[error] C:\Users\Abhinav\Desktop\Demyst\Ipify\src\main\scala\Main.scala:20:26: type mismatch;
+[error]  found   : zio.ZIO[zio.console.Console,java.io.IOException,zio.ExitCode]
+[error]     (which expands to)  zio.ZIO[zio.Has[zio.console.Console.Service],java.io.IOException,zio.ExitCode]
+[error]  required: zio.ZIO[zio.ZEnv,Nothing,zio.ExitCode]
+[error]     (which expands to)  zio.ZIO[zio.Has[zio.clock.Clock.Service] with zio.Has[zio.console.Console.Service] with zio.Has[zio.system.System.Service] with zio.Has[zio.random.Random.Service] with zio.Has[zio.blocking.Blocking.Service],Nothing,zio.ExitCode]
+[error]       ip => putStrLn(ip) *> ZIO.succeed(ExitCode.success)
+[error]                          ^
+[error] 7 errors found
+[debug] Releasing lock on file C:\Users\Abhinav\Desktop\Demyst\Ipify\project\target\.sbt-compilation-infos\root-compile\.sbt-idea-lock.
